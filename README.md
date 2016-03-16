@@ -107,15 +107,14 @@
   `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
   ```javascript
 
-    isPalindrome("racecar"); // true
-    isPalindrome("race Car"); // true
+  isPalindrome("racecar"); // true
+  isPalindrome("race Car"); // true
     
-    function isPalindrome(word) {
-      var letters_only = word.replace(/[^a-z]+/g,"");
-      letters_only = raw_chars.toLowerCase();
+  function isPalindrome(word) {
+    var letters_only = word.replace(/[^a-z]+/g,"");
+    letters_only = letters_only.toLowerCase();
       
-      return (letters_only === letters_only.split("").reverse().join(""));
-    }
-    
+    return (letters_only === letters_only.split("").reverse().join(""));
+  }
   ```
 
