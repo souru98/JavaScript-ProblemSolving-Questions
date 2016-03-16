@@ -91,7 +91,8 @@
   isAnagram(first_word, second_word);
   
   function isAnagram (first, second) {
-    // To keep consistent capitialization, change both words to lowercase.
+  
+    // For case insensitivity, change both words to lowercase.
     var a = first.toLowerCase();
     var b = second.toLowerCase();
     
