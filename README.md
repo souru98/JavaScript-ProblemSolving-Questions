@@ -119,4 +119,25 @@
     return (letters_only === letters_only.split("").reverse().join(""));
   }
   ```
+- **Removing duplicates of an array and returning an array of only unique elements**
+  ```javascript
+  
+  var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 
+  uniqueArray(array); // [1, 2, 3, 5, 9, 8]
+
+  function uniqueArray(array) {
+    var hashmap = {};
+    var unique = [];
+    
+    for(var i = 0; i < array.length; i++) {
+    
+      // If key returns null (unique), it is evaluated as false. 
+      if(!hashmap[i]) {
+        hashmap[i]++;
+        unique.push(array[i]);
+      }
+    }
+    return unique;
+  }
+  ```
