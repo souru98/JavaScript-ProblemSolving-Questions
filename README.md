@@ -81,7 +81,7 @@
     return (theoretical_sum - sum_of_integers)
   }
   ```
--** Given a two string, return true if they are anagrams of one another**  
+-**Given a two string, return true if they are anagrams of one another**  
   `"Mary" is an anagram of "Army"`
   ``` javascript
   
