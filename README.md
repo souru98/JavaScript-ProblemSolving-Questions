@@ -81,4 +81,25 @@
     return (theoretical_sum - sum_of_integers)
   }
   ```
+-** Given a two string, return true if they are anagrams of one another**  
+  `"Mary" is an anagram of "Army"`
+  ``` javascript
   
+  var first_word = "Mary";
+  var second_word = "Army";
+  
+  isAnagram(first_word, second_word);
+  
+  function isAnagram (first, second) {
+    // To keep consistent capitialization, change both words to lowercase.
+    var a = first.toLowerCase();
+    var b = second.toLowerCase();
+    
+    // Sort the strings, and join the resulting array to a string. Compare the results
+    a = a.split("").sort().join("");
+    b = b.split("").sort().join("");
+    
+    return (a === b);
+  }
+  ```
+
