@@ -111,9 +111,11 @@
   isPalindrome("race Car"); // true
     
   function isPalindrome(word) {
+    // Replace all non-letter chars with "" and change to lowercase
     var letters_only = word.replace(/[^a-z]+/g,"");
     letters_only = letters_only.toLowerCase();
-      
+    
+    // Compare the string with the reversed version of the string
     return (letters_only === letters_only.split("").reverse().join(""));
   }
   ```
