@@ -3,7 +3,8 @@
 
 ## Table of Contents
 1. [Questions](#questions)
-1. To Be Made 
+1. Logic Riddles
+1. To Be Continued 
 
 ## Questions (To be separated) 
 - **Given an array of integers, find the largest product yielded from three of the integers**  
@@ -33,5 +34,22 @@
     
     return product2
   };  
+  ```
+- **Given an string, reverse each word in the sentence**  
+  `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
+  ```javascript
+  
+  var string = "Welcome to this Javascript Guide!";
+  
+  // Output becomes !ediuG tpircsavaJ siht ot emocleW 
+  var reverse_entire_sentence = reverseBySeperator(string, "");
+  
+  // Output becomes emocleW ot siht tpircsavaJ !ediuG
+  var reverse_each_word = reverseBySeperator(reverse_entire_sentence, " ");
+  
+  function reverseBySeperator(string, seperator) {
+    return string.split(seperator).reverse().join(seperator);
+  }
+  
   ```
   
