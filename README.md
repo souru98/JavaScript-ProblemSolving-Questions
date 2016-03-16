@@ -6,7 +6,7 @@
 1. To Be Made 
 
 ## Questions (To be separated) 
-- **Given an array of integers, find the largest product yield from three of the integers**  
+- **Given an array of integers, find the largest product yielded from three of the integers**  
   ```javascript
   var unsorted_array = [-10, 7, 29, 30, 5, -10, -70];
 
