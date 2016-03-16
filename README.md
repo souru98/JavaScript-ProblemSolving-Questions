@@ -134,7 +134,7 @@
     
       // If key returns null (unique), it is evaluated as false. 
       if(!hashmap[i]) {
-        hashmap[i]++;
+        hashmap[i] = 1;
         unique.push(array[i]);
       }
     }
