@@ -11,7 +11,7 @@
   ```javascript
   var unsorted_array = [-10, 7, 29, 30, 5, -10, -70];
 
-  computeProduct(unsorted_array);
+  computeProduct(unsorted_array); // 21000
 
   function sortIntegers(a, b) {
     return a - b;
@@ -59,7 +59,7 @@
   var upper_bound = 9;
   var lower_bound = 1;
   
-  findMissingNumber(array_of_integers, upper_bound, lower_bound);
+  findMissingNumber(array_of_integers, upper_bound, lower_bound); //8
   
   function findMissingNumber(array_of_integers, upper_bound, lower_bound) {
     
@@ -88,7 +88,7 @@
   var first_word = "Mary";
   var second_word = "Army";
   
-  isAnagram(first_word, second_word);
+  isAnagram(first_word, second_word); //true
   
   function isAnagram (first, second) {
   
@@ -102,5 +102,20 @@
     
     return (a === b);
   }
+  ```
+- **Check if a given string is a palindrome**  
+  `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
+  ```javascript
+
+    isPalindrome("racecar"); // true
+    isPalindrome("race Car"); // true
+    
+    function isPalindrome(word) {
+      var letters_only = word.replace(/[^a-z]+/g,"");
+      letters_only = raw_chars.toLowerCase();
+      
+      return (letters_only === letters_only.split("").reverse().join(""));
+    }
+    
   ```
 
