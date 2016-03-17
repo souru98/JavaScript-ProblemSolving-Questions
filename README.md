@@ -1,13 +1,16 @@
 # Interview Algorithm Questions in Javascript() {...}
-*A mostly reasonable collection of technical software development interview questions solved in Javascript*
+*A mostly reasonable collection of technical software development interview questions solved in Javascript in ES5 and ES6*
 
 ## Table of Contents
-1. [Questions](#questions)
-1. Logic Riddles
+1. [Array](#array)
+1. [Strings](#strings)
+1. [Stacks and Queues](#stacks-and-queues)
+1. [Logic Riddles](#logic-riddles)
 1. To Be Continued 
 
-## Questions (To be separated) 
-- **Given an array of integers, find the largest product yielded from three of the integers**  
+## Array
+<a name="array--product"></a><a name="1.1"></a>
+- **[1.1](#array--product) Given an array of integers, find the largest product yielded from three of the integers**
   ```javascript
   var unsorted_array = [-10, 7, 29, 30, 5, -10, -70];
 
@@ -33,25 +36,10 @@
     if (product1 > product2) return product1;
     
     return product2
-  };  
+  };
   ```
-- **Given an string, reverse each word in the sentence**  
-  `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
-  ```javascript
-  
-  var string = "Welcome to this Javascript Guide!";
-  
-  // Output becomes !ediuG tpircsavaJ siht ot emocleW 
-  var reverse_entire_sentence = reverseBySeperator(string, "");
-  
-  // Output becomes emocleW ot siht tpircsavaJ !ediuG
-  var reverse_each_word = reverseBySeperator(reverse_entire_sentence, " ");
-  
-  function reverseBySeperator(string, seperator) {
-    return string.split(seperator).reverse().join(seperator);
-  }
-  ```
-- **Being told that a unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**  
+<a name="array--consecutive--sum"></a><a name="1.2"></a>
+- **[1.2](#array--consecutive--sum) Being told that a unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**  
   ```javascript
   
   // The output of the function should be 8
@@ -70,7 +58,8 @@
     }
     
     // Find theoretical sum of the consecutive numbers using a variation of Gauss Sum. 
-    // Formula: [(N * (N + 1)) / 2] - [(M * (M - 1)) / 2]; N is the upper bound and M is the lower bound
+    // Formula: [(N * (N + 1)) / 2] - [(M * (M - 1)) / 2]; 
+    // N is the upper bound and M is the lower bound
     
     upper_limit_sum = (upper_bound * (upper_bound + 1)) / 2;
     lower_limit_sum = (lower_bound * (lower_bound - 1)) / 2;
@@ -81,7 +70,45 @@
     return (theoretical_sum - sum_of_integers)
   }
   ```
-- **Given a two string, return true if they are anagrams of one another**  
+<a name="array--unique"></a><a name="1.3"></a>
+- **[1.3](#array--unique) Removing duplicates of an array and returning an array of only unique elements**
+  ```javascript
+  
+  var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
+
+  uniqueArray(array); // [1, 2, 3, 5, 9, 8]
+
+  function uniqueArray(array) {
+    array.reduce(function(prev, curr) {
+      if (prev.indexOf(curr) === -1) {
+        prev.push(curr)
+      }
+      return prev
+    }, [])
+  }
+  ```
+**[⬆ back to top](#table-of-contents)**
+
+## Strings
+<a name="string--reverse"></a><a name="2.1"></a>
+- **[2.1](#string--reverse) Given an string, reverse each word in the sentence**
+  `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
+  ```javascript
+  
+  var string = "Welcome to this Javascript Guide!";
+  
+  // Output becomes !ediuG tpircsavaJ siht ot emocleW 
+  var reverse_entire_sentence = reverseBySeperator(string, "");
+  
+  // Output becomes emocleW ot siht tpircsavaJ !ediuG
+  var reverse_each_word = reverseBySeperator(reverse_entire_sentence, " ");
+  
+  function reverseBySeperator(string, seperator) {
+    return string.split(seperator).reverse().join(seperator);
+  }
+  ```
+<a name="string--anagram"></a><a name="2.2"></a>
+- **[2.2](#string--anagram) Given a two string, return true if they are anagrams of one another**
   `"Mary" is an anagram of "Army"`
   ``` javascript
   
@@ -103,7 +130,8 @@
     return (a === b);
   }
   ```
-- **Check if a given string is a palindrome**  
+<a name="string--palindrome"></a><a name="2.3"></a>
+- **[2.3](#string--palindrome) Check if a given string is a palindrome**
   `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
   ```javascript
 
@@ -119,25 +147,78 @@
     return (letters_only === letters_only.split("").reverse().join(""));
   }
   ```
-- **Removing duplicates of an array and returning an array of only unique elements**
+**[⬆ back to top](#table-of-contents)**
+
+## Stacks and Queues
+
+<a name="stack-queue--stack-as-queue"></a><a name="3.1"></a>
+- **[3.1](#stack-queue--stack-as-queue) Implement enqueue and dequeue using only two stacks**
   ```javascript
   
-  var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
-
-  uniqueArray(array); // [1, 2, 3, 5, 9, 8]
-
-  function uniqueArray(array) {
-    var hashmap = {};
-    var unique = [];
-    
-    for(var i = 0; i < array.length; i++) {
-    
-      // If key returns null (unique), it is evaluated as false. 
-      if(!hashmap[i]) {
-        hashmap[i] = 1;
-        unique.push(array[i]);
+  var input_stack = []; // first stack
+  var output_stack = []; // second stack
+  
+  // For enqueue, just push the item into the first stack
+  function enqueue(stack_input, item) {
+    return stack_input.push(input);
+  }
+  
+  function dequeue(stack_input, stack_output) {
+    // Reverse the stack such that the first element of the output stack is the
+    // last element of the input stack. After that, pop the top of the output to 
+    // get the first element that was ever pushed into the input stack
+    if (stack_output.length <= 0) {
+      while(stack_input.length > 0) {
+        var element_to_output = stack_input.pop();
+        stack_output.push(element_to_output);
       }
+      return stack_output.pop();
     }
-    return unique;
   }
   ```
+
+**[⬆ back to top](#table-of-contents)**
+
+<a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
+- **Create a function that will evaluate if a given expression has balanced parentheses**
+  In this example, we will only consider "{}" as valid parentheses
+  `{}{}` would be considered balancing. `{{{}}` is not balanced
+  ```javascript
+
+  var expression = "{{}}{}{}"
+  var expression_false = "{}{{}";
+  
+  isBalanced(expression); // true
+  isBalanced(expression_false); //false
+  isBalanced(""); // true
+
+  function isBalanced(expression) {
+    var check_string = expression;
+    var stack = [];
+
+    // If empty, parentheses are technically balanced
+    if (check_string.length <= 0) return true
+  	
+    for (var i = 0; i < check_string.length; i++) {
+      if(check_string[i] === '{') {
+        stack.push(check_string[i]);
+      } else if (check_string[i] === '}') {
+        // pop on an empty array is undefined
+        if (stack.pop()) {
+          stack.pop();
+        } else {
+          return false;
+        }
+      }
+    }
+    
+    // If the array is not empty, it is not balanced
+    if (stack.pop()) return false;
+    return true;
+  }
+  ```
+
+## Logic Riddles
+
+
+**[⬆ back to top](#table-of-contents)**
