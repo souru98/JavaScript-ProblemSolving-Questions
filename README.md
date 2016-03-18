@@ -228,6 +228,16 @@
 **[⬆ back to top](#table-of-contents)**
 
 ## Logic Riddles
+<a name="logic-riddles--two-ropes"></a><a name="4.1"></a>
+- **[4.1](#logic-riddles--two-ropes) Two ropes and a lighter.**  
+  You are presented with two ropes and a lighter. The rope is rather strange  as the density is different throughout the
+  rope, and will not burn consistently. Knowing that each rope takes 1 hour to burn, how can you find that 45 minutes has
+  passed?
 
-
+  ```
+  Start by taking the first rope and lighting both ends. By doing so, you know that the rope 
+  will be completely burnt in 30 minutes. At the same time, light the second rope on one end. 
+  Once the first rope has completely burnt out, light the other end of the second rope. When 
+  both ropes are burnt out, 45 minutes has passed
+  ```
 **[⬆ back to top](#table-of-contents)**
