@@ -73,7 +73,14 @@
 <a name="array--unique"></a><a name="1.3"></a>
 - **[1.3](#array--unique) Removing duplicates of an array and returning an array of only unique elements**
   ```javascript
-  
+
+  // ES6 Implementation
+  var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
+
+  Array.from(new Set(array)); // [1, 2, 3, 5, 9, 8]
+
+
+  // ES5 Implementation
   var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 
   uniqueArray(array); // [1, 2, 3, 5, 9, 8]
