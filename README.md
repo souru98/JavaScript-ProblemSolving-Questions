@@ -79,12 +79,16 @@
   uniqueArray(array); // [1, 2, 3, 5, 9, 8]
 
   function uniqueArray(array) {
-    array.reduce(function(prev, curr) {
-      if (prev.indexOf(curr) === -1) {
-        prev.push(curr)
+    var hashmap = {};
+    var unique = [];
+    for(var i = 0; i < array.length; i++) {
+      // If key returns null (unique), it is evaluated as false. 
+      if(!hashmap[i]) {
+        hashmap[i]++;
+        unique.push(array[i]);
       }
-      return prev
-    }, [])
+    }
+    return unique;
   }
   ```
 **[⬆ back to top](#table-of-contents)**
