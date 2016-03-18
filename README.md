@@ -102,7 +102,7 @@
 
 ## Strings
 <a name="string--reverse"></a><a name="2.1"></a>
-- **[2.1](#string--reverse) Given an string, reverse each word in the sentence**
+- **[2.1](#string--reverse) Given an string, reverse each word in the sentence**  
   `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
   ```javascript
   
@@ -142,7 +142,7 @@
   }
   ```
 <a name="string--palindrome"></a><a name="2.3"></a>
-- **[2.3](#string--palindrome) Check if a given string is a palindrome**
+- **[2.3](#string--palindrome) Check if a given string is a palindrome**  
   `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
   ```javascript
 
@@ -188,7 +188,7 @@
   }
   ```
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
-- **[3.2](#stack-queue--parentheses-balancing) Create a function that will evaluate if a given expression has balanced parentheses**
+- **[3.2](#stack-queue--parentheses-balancing) Create a function that will evaluate if a given expression has balanced parentheses**  
   In this example, we will only consider "{}" as valid parentheses
   `{}{}` would be considered balancing. `{{{}}` is not balanced
   ```javascript
