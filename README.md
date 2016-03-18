@@ -176,9 +176,6 @@
     }
   }
   ```
-
-**[⬆ back to top](#table-of-contents)**
-
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
 - **Create a function that will evaluate if a given expression has balanced parentheses**
   In this example, we will only consider "{}" as valid parentheses
@@ -217,6 +214,7 @@
     return true;
   }
   ```
+**[⬆ back to top](#table-of-contents)**
 
 ## Logic Riddles
 
