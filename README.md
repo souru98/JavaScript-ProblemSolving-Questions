@@ -188,7 +188,7 @@
   }
   ```
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
-- **Create a function that will evaluate if a given expression has balanced parentheses**
+- **[3.2](#stack-queue--parentheses-balancing) Create a function that will evaluate if a given expression has balanced parentheses**
   In this example, we will only consider "{}" as valid parentheses
   `{}{}` would be considered balancing. `{{{}}` is not balanced
   ```javascript
