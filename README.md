@@ -6,6 +6,7 @@
 1. [Strings](#strings)
 1. [Stacks and Queues](#stacks-and-queues)
 1. [Logic Riddles](#logic-riddles)
+1. [Recursion](#recursion)
 1. To Be Continued 
 
 ## Array
@@ -239,5 +240,27 @@
   will be completely burnt in 30 minutes. At the same time, light the second rope on one end. 
   Once the first rope has completely burnt out, light the other end of the second rope. When 
   both ropes are burnt out, 45 minutes has passed
+  ```
+**[⬆ back to top](#table-of-contents)**
+
+## Recursion
+<a name="recursion--decimal-to-binary"></a><a name="5.1"></a>
+- **[5.1](#recursion--decimal-to-binary) Write a recursive function that return the binary string of a given decimal number**  
+  Given `4` as the decimal input, the function should return `100`
+
+  ``` javascript
+  
+  decimalToBinary(8) //1000
+  
+  function decimalToBinary(digit) {
+    if (n >= 1) {
+      // recursively return proceeding binary digits
+      return decimalToBinary(digit / 2) + (digit % 2).toString();
+    } else {
+      // exit condition
+      return "";
+    }
+  }
+  
   ```
 **[⬆ back to top](#table-of-contents)**
