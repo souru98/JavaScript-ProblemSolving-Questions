@@ -213,7 +213,7 @@
         stack.push(check_string[i]);
       } else if (check_string[i] === '}') {
         // pop on an empty array is undefined
-        if (stack.pop()) {
+        if (stack.length > 0) {
           stack.pop();
         } else {
           return false;
