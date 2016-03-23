@@ -5,8 +5,8 @@
 1. [Array](#array)
 1. [Strings](#strings)
 1. [Stacks and Queues](#stacks-and-queues)
-1. [Logic Riddles](#logic-riddles)
 1. [Recursion](#recursion)
+1. [Javascript Specific](#javascript)
 1. To Be Continued 
 
 ## Array
@@ -269,24 +269,9 @@
   ```
 **[⬆ back to top](#table-of-contents)**
 
-## Logic Riddles
-<a name="logic-riddles--two-ropes"></a><a name="4.1"></a>
-- **[4.1](#logic-riddles--two-ropes) Two ropes and a lighter.**  
-  You are presented with two ropes and a lighter. The rope is rather strange  as the density is different throughout the
-  rope, and will not burn consistently. Knowing that each rope takes 1 hour to burn, how can you find that 45 minutes has
-  passed?
-
-  ```
-  Start by taking the first rope and lighting both ends. By doing so, you know that the rope 
-  will be completely burnt in 30 minutes. At the same time, light the second rope on one end. 
-  Once the first rope has completely burnt out, light the other end of the second rope. When 
-  both ropes are burnt out, 45 minutes has passed
-  ```
-**[⬆ back to top](#table-of-contents)**
-
 ## Recursion
-<a name="recursion--decimal-to-binary"></a><a name="5.1"></a>
-- **[5.1](#recursion--decimal-to-binary) Write a recursive function that return the binary string of a given decimal number**  
+<a name="recursion--decimal-to-binary"></a><a name="4.1"></a>
+- **[4.1](#recursion--decimal-to-binary) Write a recursive function that return the binary string of a given decimal number**  
   Given `4` as the decimal input, the function should return `100`
 
   ``` javascript
@@ -304,8 +289,8 @@
   }
   ```
 
-<a name="recursion--binary-search"></a><a name="5.2"></a>
-- **[5.2](#recursion--binary-search) Write a recursive function that performs a binary search**  
+<a name="recursion--binary-search"></a><a name="4.2"></a>
+- **[4.2](#recursion--binary-search) Write a recursive function that performs a binary search**  
   
   ``` javascript
 
@@ -326,3 +311,8 @@
 
   ```
 **[⬆ back to top](#table-of-contents)**
+
+## Javascript
+
+**[⬆ back to top](#table-of-contents)**
+
