@@ -113,7 +113,7 @@
 
     // If there is only one element, there is no difference
 
-    if (array.length <= 1) return 0;
+    if (array.length <= 1) return -1;
 
     // current_min will keep track of the current lowest
 
@@ -134,7 +134,7 @@
     }
     
     // If negative or 0, there is no largest difference
-    if (current_max_difference <= 0) return 0;
+    if (current_max_difference <= 0) return -1;
     
     return current_max_difference;
   }
@@ -303,5 +303,27 @@
       return "";
     }
   }
+  ```
+
+<a name="recursion--binary-search"></a><a name="5.2"></a>
+- **[5.2](#recursion--binary-search) Write a recursive function that performs a binary search**  
+  
+  ``` javascript
+
+  function recursiveBinarySearch(array, value, leftposition, rightposition) {
+
+    // Value DNE
+    if (left > right) return -1;
+
+    var middle_pivot = Math.floor((leftposition + rightposition) / 2);
+    if (array[middle_pivot] === value) {
+      return middle_pivot;
+    } else if (array[middle_pivot] > key) {
+      return recursiveBinarySearch(array, value, left, middle_pivot - 1);
+    } else {
+      return recursiveBinarySearch(array, value, middle_pivot + 1, right);
+    }
+  }
+
   ```
 **[⬆ back to top](#table-of-contents)**
