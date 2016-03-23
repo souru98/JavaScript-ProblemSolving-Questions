@@ -103,37 +103,37 @@
 - **[1.4](#array--largest-difference) Given an array of integers, find the largest difference between two elements such that the element of lesser value must come before the greater element**
   ```javascript
 
-    var array = [7, 8, 4, 9, 9, 15, 3, 1, 10];
-    // [7, 8, 4, 9, 9, 15, 3, 1, 10] would return `9` based on the difference between `1` and `10`
-    // Notice: It is not `14` from the difference between `15` and `1` because 15 comes before 1.
+  var array = [7, 8, 4, 9, 9, 15, 3, 1, 10];
+  // [7, 8, 4, 9, 9, 15, 3, 1, 10] would return `9` based on the difference between `1` and `10`
+  // Notice: It is not `14` from the difference between `15` and `1` because 15 comes before 1.
 
-    findLargestDifference(array);
+  findLargestDifference(array);
 
-    function findLargestDifference(array) {
+  function findLargestDifference(array) {
 
-      // If there is only one element, there is no difference
+    // If there is only one element, there is no difference
 
-      if (array.length <= 1) return 0;
+    if (array.length <= 1) return 0;
 
-      // current_min will keep track of the current lowest
+    // current_min will keep track of the current lowest
 
-      var current_min = array[0];
-      var current_max_difference = 0;
+    var current_min = array[0];
+    var current_max_difference = 0;
 
-      // We will iterate through the array and keep track of the current max difference
-      // If we find a greater max difference, we will set the current max difference to that variable
-      // Keep track of the current min as we iterate through the array, since we know the greatest
-      // difference is yield from `largest value in future` - `smallest value before it`
+    // We will iterate through the array and keep track of the current max difference
+    // If we find a greater max difference, we will set the current max difference to that variable
+    // Keep track of the current min as we iterate through the array, since we know the greatest
+    // difference is yield from `largest value in future` - `smallest value before it`
 
-      for (var i = 1; i < array.length; i++) {
-        if (array[i] > current_min && (array[i] - current_min > current_max_difference)) {
-          current_max_difference = array[i] - current_min;
-        } else if (array[i] <= current_min) {
-          current_min = array[i];
-        }
+    for (var i = 1; i < array.length; i++) {
+      if (array[i] > current_min && (array[i] - current_min > current_max_difference)) {
+        current_max_difference = array[i] - current_min;
+      } else if (array[i] <= current_min) {
+        current_min = array[i];
       }
-      return current_max_difference;
     }
+    return current_max_difference;
+  }
 
   ```
 
