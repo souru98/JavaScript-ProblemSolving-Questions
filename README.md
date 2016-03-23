@@ -319,9 +319,9 @@
     if (array[middle_pivot] === value) {
       return middle_pivot;
     } else if (array[middle_pivot] > key) {
-      return recursiveBinarySearch(array, value, left, middle_pivot - 1);
+      return recursiveBinarySearch(array, value, leftposition, middle_pivot - 1);
     } else {
-      return recursiveBinarySearch(array, value, middle_pivot + 1, right);
+      return recursiveBinarySearch(array, value, middle_pivot + 1, rightposition);
     }
   }
 
