@@ -132,6 +132,10 @@
         current_min = array[i];
       }
     }
+    
+    // If negative or 0, there is no largest difference
+    if (current_max_difference <= 0) return 0;
+    
     return current_max_difference;
   }
 
