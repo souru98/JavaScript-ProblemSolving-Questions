@@ -314,13 +314,14 @@
 
 ## Javascript
 <a name="javascript--hoisting"></a><a name="5.1"></a>
-- **[5.1](#javascript--hosting) Explain what is hoisting in Javascript** 
+- **[5.1](#javascript--hosting) Explain what is hoisting in Javascript**
   ```
   Hoisting is the concept in which Javascript, by default, moves all declarations to the top  
   of the current scope. As such, a variable can be used before it has been declared. Note that  
-  Javascript only hoists declarations and not initializations 
-
+  Javascript only hoists declarations and not initializations
+  
   ```
+
 <a name="javascript--use-strict"></a><a name="5.2"></a>
 - **[5.2](#javascript--use-strict) Describe the functionality of the `use strict;` directive**
   ```
@@ -348,7 +349,22 @@
 
   One way to prevent event bubbling is using `event.stopPropagation()` or `event.cancelBubble`  
   on IE < 9
-  
+  ```
+
+<a name="javascript--strict-operators"></a><a name="5.4"></a>
+- **[5.4](#javascript--strict-operators) What is the difference between `==` and `===` in JS?**
+  ```
+  `===` is known as a strict operator. The key difference between `==` and `===` is that the  
+  strict operator matches for both value and type, as opposed to just the value.
+  ```
+
+  ```javascript
+  // example of comparators
+  0 == false; // true
+  0 === false; // false
+
+  2 == '2' // true
+  2 === '2' // false
   ```
 
 **[⬆ back to top](#table-of-contents)**
