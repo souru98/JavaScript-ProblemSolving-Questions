@@ -367,5 +367,14 @@
   2 === '2' // false
   ```
 
+<a name="javascript--null-undefined"></a><a name="5.5"></a>
+- **[5.5](#javascript--null-undefined) What is the difference between `null` and `undefined`  
+  ```
+  In Javascript, null is an assignment value, and can be assigned to a variable representing that  
+  it has no value. Undefined, on the other hand, represents that a variable has been declared but  
+  there is no value associated with it
+  ```
+
+
 **[⬆ back to top](#table-of-contents)**
 
