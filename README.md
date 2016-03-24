@@ -318,11 +318,10 @@
   ```
   Hoisting is the concept in which Javascript, by default, moves all declarations to the top  
   of the current scope. As such, a variable can be used before it has been declared. Note that  
-  Javascript only hoists declarations and not initializations
-  
+  Javascript only hoists declarations and not initializations 
   ```
 <a name="javascript--use-strict"></a><a name="5.2"></a>
-- **[5.2](#javascript--use-strict) Explain the functionality of the `use strict;` directive**
+- **[5.2](#javascript--use-strict) Describe the functionality of the `use strict;` directive**
   ```
   the `use strict` directive defines that the Javascript should be executed in `strict mode`.  
   One major benefit that strict mode provides is that it prevents developers from using  
@@ -339,5 +338,17 @@
     return x * x;
   }
   ```
+<a name="javascript--event-bubbling"></a><a name="5.3"></a>
+- **[5.3](#javascript--event-bubbling) Explain `event bubbling` and how one may prevent it**
+  ```
+  Event bubbling is the concept in which an event triggers at the deepest possible element,  
+  and triggers on parent elements in nesting order. As a result, when clicking on a child element  
+  one may exhibit the handler of the parent activating.  
+
+  One way to prevent event bubbling is using `event.stopPropagation()` or `event.cancelBubble`  
+  on IE < 9
+
+  ```
+
 **[⬆ back to top](#table-of-contents)**
 
