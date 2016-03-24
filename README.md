@@ -314,11 +314,12 @@
 
 ## Javascript
 <a name="javascript--hoisting"></a><a name="5.1"></a>
-- **[5.1](#javascript--hosting) Explain what is hoisting in Javascript**
+- **[5.1](#javascript--hosting) Explain what is hoisting in Javascript** 
   ```
   Hoisting is the concept in which Javascript, by default, moves all declarations to the top  
   of the current scope. As such, a variable can be used before it has been declared. Note that  
   Javascript only hoists declarations and not initializations 
+
   ```
 <a name="javascript--use-strict"></a><a name="5.2"></a>
 - **[5.2](#javascript--use-strict) Describe the functionality of the `use strict;` directive**
@@ -347,7 +348,7 @@
 
   One way to prevent event bubbling is using `event.stopPropagation()` or `event.cancelBubble`  
   on IE < 9
-
+  
   ```
 
 **[⬆ back to top](#table-of-contents)**
