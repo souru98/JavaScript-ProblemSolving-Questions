@@ -7,7 +7,7 @@
 1. [Stacks and Queues](#stacks-and-queues)
 1. [Recursion](#recursion)
 1. [Javascript Specific](#javascript)
-1. To Be Continued 
+1. To Be Continued
 
 ## Array
 <a name="array--product"></a><a name="1.1"></a>
@@ -35,39 +35,39 @@
     product2 = sorted_array[0] * sorted_array[1] * sorted_array[array_n_element];
 
     if (product1 > product2) return product1;
-    
+
     return product2
   };
   ```
 <a name="array--consecutive--sum"></a><a name="1.2"></a>
-- **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**  
+- **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**
   ```javascript
-  
+
   // The output of the function should be 8
   var array_of_integers = [2, 5, 1, 4, 9, 6, 3, 7];
   var upper_bound = 9;
   var lower_bound = 1;
-  
+
   findMissingNumber(array_of_integers, upper_bound, lower_bound); //8
-  
+
   function findMissingNumber(array_of_integers, upper_bound, lower_bound) {
-    
+
     // Iterate through array to find the sum of the numbers
     var sum_of_integers = 0;
     for (var i = 0; i < array_of_integers.length; i++) {
       sum_of_integers += array_of_integers[i];
     }
-    
-    // Find theoretical sum of the consecutive numbers using a variation of Gauss Sum. 
-    // Formula: [(N * (N + 1)) / 2] - [(M * (M - 1)) / 2]; 
+
+    // Find theoretical sum of the consecutive numbers using a variation of Gauss Sum.
+    // Formula: [(N * (N + 1)) / 2] - [(M * (M - 1)) / 2];
     // N is the upper bound and M is the lower bound
-    
+
     upper_limit_sum = (upper_bound * (upper_bound + 1)) / 2;
     lower_limit_sum = (lower_bound * (lower_bound - 1)) / 2;
-    
+
     theoretical_sum = upper_limit_sum - lower_limit_sum;
-    
-    // 
+
+    //
     return (theoretical_sum - sum_of_integers)
   }
   ```
@@ -90,7 +90,7 @@
     var hashmap = {};
     var unique = [];
     for(var i = 0; i < array.length; i++) {
-      // If key returns null (unique), it is evaluated as false. 
+      // If key returns null (unique), it is evaluated as false.
       if(!hashmap.hasOwnProperty([array[i]])) {
         hashmap[array[i]] = 1;
         unique.push(array[i]);
@@ -104,7 +104,7 @@
   ```javascript
 
   var array = [7, 8, 4, 9, 9, 15, 3, 1, 10];
-  // [7, 8, 4, 9, 9, 15, 3, 1, 10] would return `9` based on the difference between `1` and `10`
+  // [7, 8, 4, 9, 9, 15, 3, 1, 10] would return `11` based on the difference between `4` and `15`
   // Notice: It is not `14` from the difference between `15` and `1` because 15 comes before 1.
 
   findLargestDifference(array);
@@ -132,10 +132,10 @@
         current_min = array[i];
       }
     }
-    
+
     // If negative or 0, there is no largest difference
     if (current_max_difference <= 0) return -1;
-    
+
     return current_max_difference;
   }
 
@@ -145,18 +145,18 @@
 
 ## Strings
 <a name="string--reverse"></a><a name="2.1"></a>
-- **[2.1](#string--reverse) Given a string, reverse each word in the sentence**  
+- **[2.1](#string--reverse) Given a string, reverse each word in the sentence**
   `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
   ```javascript
-  
+
   var string = "Welcome to this Javascript Guide!";
-  
-  // Output becomes !ediuG tpircsavaJ siht ot emocleW 
+
+  // Output becomes !ediuG tpircsavaJ siht ot emocleW
   var reverse_entire_sentence = reverseBySeparator(string, "");
-  
+
   // Output becomes emocleW ot siht tpircsavaJ !ediuG
   var reverse_each_word = reverseBySeparator(reverse_entire_sentence, " ");
-  
+
   function reverseBySeparator(string, separator) {
     return string.split(separator).reverse().join(separator);
   }
@@ -165,33 +165,33 @@
 - **[2.2](#string--anagram) Given two strings, return true if they are anagrams of one another**
   `"Mary" is an anagram of "Army"`
   ``` javascript
-  
+
   var first_word = "Mary";
   var second_word = "Army";
-  
+
   isAnagram(first_word, second_word); //true
-  
+
   function isAnagram (first, second) {
-  
+
     // For case insensitivity, change both words to lowercase.
     var a = first.toLowerCase();
     var b = second.toLowerCase();
-    
+
     // Sort the strings, and join the resulting array to a string. Compare the results
     a = a.split("").sort().join("");
     b = b.split("").sort().join("");
-    
+
     return (a === b);
   }
   ```
 <a name="string--palindrome"></a><a name="2.3"></a>
-- **[2.3](#string--palindrome) Check if a given string is a palindrome**  
+- **[2.3](#string--palindrome) Check if a given string is a palindrome**
   `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
   ```javascript
 
   isPalindrome("racecar"); // true
   isPalindrome("race Car"); // true
-    
+
   function isPalindrome(word) {
     // Replace all non-letter chars with "" and change to lowercase
     var letters_only = word.toLowerCase().replace(/\s/g, "");
@@ -207,18 +207,18 @@
 <a name="stack-queue--stack-as-queue"></a><a name="3.1"></a>
 - **[3.1](#stack-queue--stack-as-queue) Implement enqueue and dequeue using only two stacks**
   ```javascript
-  
+
   var input_stack = []; // first stack
   var output_stack = []; // second stack
-  
+
   // For enqueue, just push the item into the first stack
   function enqueue(stack_input, item) {
     return stack_input.push(input);
   }
-  
+
   function dequeue(stack_input, stack_output) {
     // Reverse the stack such that the first element of the output stack is the
-    // last element of the input stack. After that, pop the top of the output to 
+    // last element of the input stack. After that, pop the top of the output to
     // get the first element that was ever pushed into the input stack
     if (stack_output.length <= 0) {
       while(stack_input.length > 0) {
@@ -230,14 +230,14 @@
   }
   ```
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
-- **[3.2](#stack-queue--parentheses-balancing) Create a function that will evaluate if a given expression has balanced parentheses -- Using stacks**  
+- **[3.2](#stack-queue--parentheses-balancing) Create a function that will evaluate if a given expression has balanced parentheses -- Using stacks**
   In this example, we will only consider "{}" as valid parentheses
   `{}{}` would be considered balancing. `{{{}}` is not balanced
   ```javascript
 
   var expression = "{{}}{}{}"
   var expression_false = "{}{{}";
-  
+
   isBalanced(expression); // true
   isBalanced(expression_false); //false
   isBalanced(""); // true
@@ -248,7 +248,7 @@
 
     // If empty, parentheses are technically balanced
     if (check_string.length <= 0) return true
-  	
+
     for (var i = 0; i < check_string.length; i++) {
       if(check_string[i] === '{') {
         stack.push(check_string[i]);
@@ -261,7 +261,7 @@
         }
       }
     }
-    
+
     // If the array is not empty, it is not balanced
     if (stack.pop()) return false;
     return true;
@@ -271,13 +271,13 @@
 
 ## Recursion
 <a name="recursion--decimal-to-binary"></a><a name="4.1"></a>
-- **[4.1](#recursion--decimal-to-binary) Write a recursive function that returns the binary string of a given decimal number**  
+- **[4.1](#recursion--decimal-to-binary) Write a recursive function that returns the binary string of a given decimal number**
   Given `4` as the decimal input, the function should return `100`
 
   ``` javascript
-  
+
   decimalToBinary(8) //1000
-  
+
   function decimalToBinary(digit) {
     if (n >= 1) {
       // recursively return proceeding binary digits
@@ -290,8 +290,8 @@
   ```
 
 <a name="recursion--binary-search"></a><a name="4.2"></a>
-- **[4.2](#recursion--binary-search) Write a recursive function that performs a binary search**  
-  
+- **[4.2](#recursion--binary-search) Write a recursive function that performs a binary search**
+
   ``` javascript
 
   function recursiveBinarySearch(array, value, leftposition, rightposition) {
@@ -316,24 +316,24 @@
 <a name="javascript--hoisting"></a><a name="5.1"></a>
 - **[5.1](#javascript--hosting) Explain what is hoisting in Javascript**
   ```
-  Hoisting is the concept in which Javascript, by default, moves all declarations to the top  
-  of the current scope. As such, a variable can be used before it has been declared. Note that  
+  Hoisting is the concept in which Javascript, by default, moves all declarations to the top
+  of the current scope. As such, a variable can be used before it has been declared. Note that
   Javascript only hoists declarations and not initializations
-  
+
   ```
 
 <a name="javascript--use-strict"></a><a name="5.2"></a>
 - **[5.2](#javascript--use-strict) Describe the functionality of the `use strict;` directive**
   ```
-  the `use strict` directive defines that the Javascript should be executed in `strict mode`.  
-  One major benefit that strict mode provides is that it prevents developers from using  
+  the `use strict` directive defines that the Javascript should be executed in `strict mode`.
+  One major benefit that strict mode provides is that it prevents developers from using
   undeclared variables. Older versions of javascript would ignore this directive declaration
   ```
-  
+
   ``` javascript
   // example of strict mode
   "use strict";
-  
+
   catchThemAll();
   function catchThemAll() {
     x = 3.14; // error will be thrown
@@ -343,18 +343,18 @@
 <a name="javascript--event-bubbling"></a><a name="5.3"></a>
 - **[5.3](#javascript--event-bubbling) Explain `event bubbling` and how one may prevent it**
   ```
-  Event bubbling is the concept in which an event triggers at the deepest possible element,  
-  and triggers on parent elements in nesting order. As a result, when clicking on a child element  
-  one may exhibit the handler of the parent activating.  
+  Event bubbling is the concept in which an event triggers at the deepest possible element,
+  and triggers on parent elements in nesting order. As a result, when clicking on a child element
+  one may exhibit the handler of the parent activating.
 
-  One way to prevent event bubbling is using `event.stopPropagation()` or `event.cancelBubble`  
+  One way to prevent event bubbling is using `event.stopPropagation()` or `event.cancelBubble`
   on IE < 9
   ```
 
 <a name="javascript--strict-operators"></a><a name="5.4"></a>
 - **[5.4](#javascript--strict-operators) What is the difference between `==` and `===` in JS?**
   ```
-  `===` is known as a strict operator. The key difference between `==` and `===` is that the  
+  `===` is known as a strict operator. The key difference between `==` and `===` is that the
   strict operator matches for both value and type, as opposed to just the value.
   ```
 
@@ -368,22 +368,22 @@
   ```
 
 <a name="javascript--null-undefined"></a><a name="5.5"></a>
-- **[5.5](#javascript--null-undefined) What is the difference between `null` and `undefined`** 
+- **[5.5](#javascript--null-undefined) What is the difference between `null` and `undefined`**
   ```
-  
-  In Javascript, null is an assignment value, and can be assigned to a variable representing that  
-  it has no value. Undefined, on the other hand, represents that a variable has been declared but  
+
+  In Javascript, null is an assignment value, and can be assigned to a variable representing that
+  it has no value. Undefined, on the other hand, represents that a variable has been declared but
   there is no value associated with it
   ```
 
 <a name="javascript--difference-inheritance"></a><a name="5.6"></a>
-- **[5.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**  
+- **[5.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**
   ```
-  
-  In classical inheritance, classes are immutable, may or may not support multiple   
-  inheritance, and may contain interfaces, final classes, and abstract classes. In contrast,  
-  prototypes are much more flexible in the sense that they may be mutable or immutable. The object   
-  may inherit from multiple prototypes, and only contains objects.  
+
+  In classical inheritance, classes are immutable, may or may not support multiple
+  inheritance, and may contain interfaces, final classes, and abstract classes. In contrast,
+  prototypes are much more flexible in the sense that they may be mutable or immutable. The object
+  may inherit from multiple prototypes, and only contains objects.
   ```
 
 **[⬆ back to top](#table-of-contents)**
