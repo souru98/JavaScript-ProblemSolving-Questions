@@ -40,7 +40,7 @@
   };
   ```
 <a name="array--consecutive--sum"></a><a name="1.2"></a>
-- **[1.2](#array--consecutive--sum) Being told that a unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**  
+- **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**  
   ```javascript
   
   // The output of the function should be 8
@@ -145,24 +145,24 @@
 
 ## Strings
 <a name="string--reverse"></a><a name="2.1"></a>
-- **[2.1](#string--reverse) Given an string, reverse each word in the sentence**  
+- **[2.1](#string--reverse) Given a string, reverse each word in the sentence**  
   `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
   ```javascript
   
   var string = "Welcome to this Javascript Guide!";
   
   // Output becomes !ediuG tpircsavaJ siht ot emocleW 
-  var reverse_entire_sentence = reverseBySeperator(string, "");
+  var reverse_entire_sentence = reverseBySeparator(string, "");
   
   // Output becomes emocleW ot siht tpircsavaJ !ediuG
-  var reverse_each_word = reverseBySeperator(reverse_entire_sentence, " ");
+  var reverse_each_word = reverseBySeparator(reverse_entire_sentence, " ");
   
-  function reverseBySeperator(string, seperator) {
-    return string.split(seperator).reverse().join(seperator);
+  function reverseBySeparator(string, separator) {
+    return string.split(separator).reverse().join(separator);
   }
   ```
 <a name="string--anagram"></a><a name="2.2"></a>
-- **[2.2](#string--anagram) Given a two string, return true if they are anagrams of one another**
+- **[2.2](#string--anagram) Given two strings, return true if they are anagrams of one another**
   `"Mary" is an anagram of "Army"`
   ``` javascript
   
@@ -271,7 +271,7 @@
 
 ## Recursion
 <a name="recursion--decimal-to-binary"></a><a name="4.1"></a>
-- **[4.1](#recursion--decimal-to-binary) Write a recursive function that return the binary string of a given decimal number**  
+- **[4.1](#recursion--decimal-to-binary) Write a recursive function that returns the binary string of a given decimal number**  
   Given `4` as the decimal input, the function should return `100`
 
   ``` javascript
@@ -381,7 +381,7 @@
   ```
   
   In classical inheritance, classes are immutable, may or may not support multiple   
-  inheritances, and may contains interfaces, final classes, and abstract classes. In contrast,  
+  inheritance, and may contain interfaces, final classes, and abstract classes. In contrast,  
   prototypes are much more flexible in the sense that they may be mutable or immutable. The object   
   may inherit from multiple prototypes, and only contains objects.  
   ```
