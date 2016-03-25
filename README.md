@@ -370,6 +370,7 @@
 <a name="javascript--null-undefined"></a><a name="5.5"></a>
 - **[5.5](#javascript--null-undefined) What is the difference between `null` and `undefined`** 
   ```
+  
   In Javascript, null is an assignment value, and can be assigned to a variable representing that  
   it has no value. Undefined, on the other hand, represents that a variable has been declared but  
   there is no value associated with it
@@ -378,6 +379,7 @@
 <a name="javascript--difference-inheritance"></a><a name="5.6"></a>
 - **[5.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**  
   ```
+  
   In classical inheritance, classes are immutable, may or may not support multiple inheritances, and may contains  
   interfaces, final classes, and abstract classes. In contrast, prototypes are much more flexible in the sense that  
   they may be mutable or immutable. The object may inherit from multiple prototypes, and only contains objects.  
