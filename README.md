@@ -380,9 +380,10 @@
 - **[5.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**  
   ```
   
-  In classical inheritance, classes are immutable, may or may not support multiple inheritances, and may contains  
-  interfaces, final classes, and abstract classes. In contrast, prototypes are much more flexible in the sense that  
-  they may be mutable or immutable. The object may inherit from multiple prototypes, and only contains objects.  
+  In classical inheritance, classes are immutable, may or may not support multiple inheritances,  
+  and may contains interfaces, final classes, and abstract classes. In contrast, prototypes are much more  
+  flexible in the sense that they may be mutable or immutable. The object may inherit from multiple prototypes,  
+  and only contains objects.  
   ```
 
 **[⬆ back to top](#table-of-contents)**
