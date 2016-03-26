@@ -276,15 +276,24 @@
 
   ``` javascript
 
+  decimalToBinary(3) // 11
   decimalToBinary(8) //1000
+  decimalToBinary(1000) //1111101000
 
   function decimalToBinary(digit) {
-    if (n >= 1) {
-      // recursively return proceeding binary digits
-      return decimalToBinary(digit / 2) + (digit % 2).toString();
+    if(digit >= 1) {
+
+      // if digit is not divisible by 2 then recursively return proceeding
+      // binary of the digit minus 1, 1 is added for the leftover 1 digit
+      if (digit % 2) {
+        return decimalToBinary((digit - 1) / 2) + 1;
+      } else {
+        // recursively return proceeding binary digits
+        return decimalToBinary(digit / 2) + 0;
+      }
     } else {
       // exit condition
-      return "";
+      return '';
     }
   }
   ```
@@ -387,4 +396,3 @@
   ```
 
 **[⬆ back to top](#table-of-contents)**
-
