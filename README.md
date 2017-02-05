@@ -6,6 +6,7 @@
 1. [Strings](#strings)
 1. [Stacks and Queues](#stacks-and-queues)
 1. [Recursion](#recursion)
+1. [Numbers](#javascript)
 1. [Javascript Specific](#javascript)
 1. To Be Continued
 
@@ -359,9 +360,43 @@
   ```
 **[⬆ back to top](#table-of-contents)**
 
+## Numbers
+<a name="numbers--power-of-two"></a><a name="5.1"></a>
+- **[5.1](#numbers--power-of-two) Given an integer, determine if it is a power of 2. If so,
+  return that number, else return -1. (0 is not a power of two)**
+  ``` javascript
+
+  isPowerOfTwo(4); // true
+  isPowerOfTwo(64); // true
+  isPowerOfTwo(1); // true
+  isPowerOfTwo(0); // false
+  isPowerOfTwo(-1); // false
+
+  // For the non-zero case:
+  function isPowerOfTwo(number) {
+    // `&` uses the bitwise n.
+    // In the case of number = 4; the expression would be identical to:
+    // `return (4 & 3 === 0)`
+    // In bitwise, 4 is 100, and 3 is 011. Using &, if two values at the same
+    // spot is 1, then result is 1, else 0. In this case, it would return 000,
+    // and thus, 4 satisfies are expression.
+    // In turn, if the expression is `return (5 & 4 === 0)`, it would be false
+    // since it returns 101 & 100 = 100 (NOT === 0) 
+    return (number & (number - 1) === 0)
+  };
+
+  // For zero-case:
+  function isPowerOfTwoZeroCase(number) {
+    return (x != 0) && ((x & (x - 1)) === 0);
+  };
+
+
+  ```
+**[⬆ back to top](#table-of-contents)**
+
 ## Javascript
-<a name="javascript--hoisting"></a><a name="5.1"></a>
-- **[5.1](#javascript--hosting) Explain what is hoisting in Javascript**
+<a name="javascript--hoisting"></a><a name="6.1"></a>
+- **[6.1](#javascript--hosting) Explain what is hoisting in Javascript**
   ```
   Hoisting is the concept in which Javascript, by default, moves all declarations to the top
   of the current scope. As such, a variable can be used before it has been declared. Note that
@@ -369,8 +404,8 @@
 
   ```
 
-<a name="javascript--use-strict"></a><a name="5.2"></a>
-- **[5.2](#javascript--use-strict) Describe the functionality of the `use strict;` directive**
+<a name="javascript--use-strict"></a><a name="6.2"></a>
+- **[6.2](#javascript--use-strict) Describe the functionality of the `use strict;` directive**
   ```
   the `use strict` directive defines that the Javascript should be executed in `strict mode`.
   One major benefit that strict mode provides is that it prevents developers from using
@@ -387,8 +422,8 @@
     return x * x;
   }
   ```
-<a name="javascript--event-bubbling"></a><a name="5.3"></a>
-- **[5.3](#javascript--event-bubbling) Explain `event bubbling` and how one may prevent it**
+<a name="javascript--event-bubbling"></a><a name="6.3"></a>
+- **[6.3](#javascript--event-bubbling) Explain `event bubbling` and how one may prevent it**
   ```
   Event bubbling is the concept in which an event triggers at the deepest possible element,
   and triggers on parent elements in nesting order. As a result, when clicking on a child element
@@ -398,8 +433,8 @@
   on IE < 9
   ```
 
-<a name="javascript--strict-operators"></a><a name="5.4"></a>
-- **[5.4](#javascript--strict-operators) What is the difference between `==` and `===` in JS?**
+<a name="javascript--strict-operators"></a><a name="6.4"></a>
+- **[6.4](#javascript--strict-operators) What is the difference between `==` and `===` in JS?**
   ```
   `===` is known as a strict operator. The key difference between `==` and `===` is that the
   strict operator matches for both value and type, as opposed to just the value.
@@ -414,8 +449,8 @@
   2 === '2' // false
   ```
 
-<a name="javascript--null-undefined"></a><a name="5.5"></a>
-- **[5.5](#javascript--null-undefined) What is the difference between `null` and `undefined`**
+<a name="javascript--null-undefined"></a><a name="6.5"></a>
+- **[6.5](#javascript--null-undefined) What is the difference between `null` and `undefined`**
   ```
 
   In Javascript, null is an assignment value, and can be assigned to a variable representing that
@@ -423,8 +458,8 @@
   there is no value associated with it
   ```
 
-<a name="javascript--difference-inheritance"></a><a name="5.6"></a>
-- **[5.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**
+<a name="javascript--difference-inheritance"></a><a name="6.6"></a>
+- **[6.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**
   ```
 
   In classical inheritance, classes are immutable, may or may not support multiple
