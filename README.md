@@ -6,7 +6,7 @@
 1. [Strings](#strings)
 1. [Stacks and Queues](#stacks-and-queues)
 1. [Recursion](#recursion)
-1. [Numbers](#javascript)
+1. [Numbers](#numbers)
 1. [Javascript Specific](#javascript)
 1. To Be Continued
 
@@ -381,7 +381,7 @@
     // spot is 1, then result is 1, else 0. In this case, it would return 000,
     // and thus, 4 satisfies are expression.
     // In turn, if the expression is `return (5 & 4 === 0)`, it would be false
-    // since it returns 101 & 100 = 100 (NOT === 0) 
+    // since it returns 101 & 100 = 100 (NOT === 0)
     return (number & (number - 1) === 0)
   };
 
