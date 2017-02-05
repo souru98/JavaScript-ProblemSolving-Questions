@@ -252,7 +252,7 @@
 
   // For enqueue, just push the item into the first stack
   function enqueue(stack_input, item) {
-    return stack_input.push(input);
+    return stack_input.push(item);
   }
 
   function dequeue(stack_input, stack_output) {
