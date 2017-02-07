@@ -387,7 +387,7 @@
 
   // For zero-case:
   function isPowerOfTwoZeroCase(number) {
-    return (x != 0) && ((x & (x - 1)) === 0);
+    return (number != 0) && ((number & (number - 1)) === 0);
   };
 
 
