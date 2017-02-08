@@ -345,12 +345,12 @@
   function recursiveBinarySearch(array, value, leftposition, rightposition) {
 
     // Value DNE
-    if (left > right) return -1;
+    if (leftposition > rightposition) return -1;
 
     var middle_pivot = Math.floor((leftposition + rightposition) / 2);
     if (array[middle_pivot] === value) {
       return middle_pivot;
-    } else if (array[middle_pivot] > key) {
+    } else if (array[middle_pivot] > value) {
       return recursiveBinarySearch(array, value, leftposition, middle_pivot - 1);
     } else {
       return recursiveBinarySearch(array, value, middle_pivot + 1, rightposition);
