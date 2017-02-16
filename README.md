@@ -180,39 +180,42 @@
 
   ```
 
-  <a name="array--intersection"></a><a name="1.6"></a>
-  - **[1.6](#array--intersection) Find the intersection of two arrays. An intersection would be the common elements that exists within both arrays**
-    ```javascript
+<a name="array--intersection"></a><a name="1.6"></a>
+- **[1.6](#array--intersection) Find the intersection of two arrays. An intersection would be the common elements that exists within both arrays. In this case, these elements should be unique!**
+  ```javascript
 
-    var firstArray = [2, 2, 4, 1];
-    var secondArray = [1, 2, 0, 2];
+  var firstArray = [2, 2, 4, 1];
+  var secondArray = [1, 2, 0, 2];
 
-    intersection(firstArray, secondArray) // [2, 1]
+  intersection(firstArray, secondArray) // [2, 1]
 
-    function intersection(firstArray, secondArray) {
+  function intersection(firstArray, secondArray) {
 
-      // The logic here is to create a hashmap with the elements of the firstArray as the keys.
-      // After that, you can use the hashmap's O(1) look up time to check if the element exists in the hash
-      // If it doeos exist, add that element to the new array.
+    // The logic here is to create a hashmap with the elements of the firstArray as the keys.
+    // After that, you can use the hashmap's O(1) look up time to check if the element exists in the hash
+    // If it doeos exist, add that element to the new array.
 
-      var hashmap = {};
-      var intersectionArray = [];
+    var hashmap = {};
+    var intersectionArray = [];
 
-      firstArray.forEach(function(element) {
-        hashmap[element] = 1;
-      });
+    firstArray.forEach(function(element) {
+      hashmap[element] = 1;
+    });
 
-      secondArray.forEach(function(element) {
-        if (hashmap[element]) {
-          intersectionArray.push(element);
-        }
-      });
-      return intersectionArray;
+    // Since we on;y want to push unique elements in our case... we can implement a counter to keep track of what we
+    // already added
+    secondArray.forEach(function(element) {
+      if (hashmap[element] == 1) {
+        intersectionArray.push(element);
+        hashmap[element]++;
+      }
+    });
+    return intersectionArray;
 
-      // Time complexity O(n), Space complexity O(n)
-    }
+    // Time complexity O(n), Space complexity O(n)
+  }
 
-    ```
+  ```
 
 **[⬆ back to top](#table-of-contents)**
 
