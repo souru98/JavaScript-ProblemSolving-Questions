@@ -202,7 +202,7 @@
       hashmap[element] = 1;
     });
 
-    // Since we on;y want to push unique elements in our case... we can implement a counter to keep track of what we
+    // Since we only want to push unique elements in our case... we can implement a counter to keep track of what we
     // already added
     secondArray.forEach(function(element) {
       if (hashmap[element] == 1) {
