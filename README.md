@@ -193,7 +193,7 @@
 
     // The logic here is to create a hashmap with the elements of the firstArray as the keys.
     // After that, you can use the hashmap's O(1) look up time to check if the element exists in the hash
-    // If it doeos exist, add that element to the new array.
+    // If it does exist, add that element to the new array.
 
     var hashmap = {};
     var intersectionArray = [];
