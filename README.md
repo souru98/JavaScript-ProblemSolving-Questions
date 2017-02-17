@@ -22,7 +22,7 @@
     return a - b;
   }
 
-  // greatest product is either (min1 * min2 * max1 || max1 * max2 * max3)
+  // Greatest product is either (min1 * min2 * max1 || max1 * max2 * max3)
   function computeProduct(unsorted) {
     var sorted_array = unsorted.sort(sortIntegers),
       product1 = 1,
@@ -33,6 +33,7 @@
     for (var x = array_n_element; x > array_n_element - 3; x--) {
         product1 = product1 * sorted_array[x];
     }
+
     product2 = sorted_array[0] * sorted_array[1] * sorted_array[array_n_element];
 
     if (product1 > product2) return product1;
@@ -43,16 +44,14 @@
 <a name="array--consecutive--sum"></a><a name="1.2"></a>
 - **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**
   ```javascript
-
   // The output of the function should be 8
   var array_of_integers = [2, 5, 1, 4, 9, 6, 3, 7];
   var upper_bound = 9;
   var lower_bound = 1;
 
-  findMissingNumber(array_of_integers, upper_bound, lower_bound); //8
+  findMissingNumber(array_of_integers, upper_bound, lower_bound); // 8
 
   function findMissingNumber(array_of_integers, upper_bound, lower_bound) {
-
     // Iterate through array to find the sum of the numbers
     var sum_of_integers = 0;
     for (var i = 0; i < array_of_integers.length; i++) {
@@ -68,19 +67,16 @@
 
     theoretical_sum = upper_limit_sum - lower_limit_sum;
 
-    //
-    return (theoretical_sum - sum_of_integers);
+    return theoretical_sum - sum_of_integers;
   }
   ```
 <a name="array--unique"></a><a name="1.3"></a>
 - **[1.3](#array--unique) Removing duplicates of an array and returning an array of only unique elements**
   ```javascript
-
   // ES6 Implementation
   var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 
   Array.from(new Set(array)); // [1, 2, 3, 5, 9, 8]
-
 
   // ES5 Implementation
   var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
@@ -90,6 +86,7 @@
   function uniqueArray(array) {
     var hashmap = {};
     var unique = [];
+
     for(var i = 0; i < array.length; i++) {
       // If key returns null (unique), it is evaluated as false.
       if(!hashmap.hasOwnProperty([array[i]])) {
@@ -97,13 +94,13 @@
         unique.push(array[i]);
       }
     }
+
     return unique;
   }
   ```
 <a name="array--largest-difference"></a><a name="1.4"></a>
 - **[1.4](#array--largest-difference) Given an array of integers, find the largest difference between two elements such that the element of lesser value must come before the greater element**
   ```javascript
-
   var array = [7, 8, 4, 9, 9, 15, 3, 1, 10];
   // [7, 8, 4, 9, 9, 15, 3, 1, 10] would return `11` based on the difference between `4` and `15`
   // Notice: It is not `14` from the difference between `15` and `1` because 15 comes before 1.
@@ -111,13 +108,10 @@
   findLargestDifference(array);
 
   function findLargestDifference(array) {
-
     // If there is only one element, there is no difference
-
     if (array.length <= 1) return -1;
 
     // current_min will keep track of the current lowest
-
     var current_min = array[0];
     var current_max_difference = 0;
 
@@ -144,7 +138,6 @@
 <a name="array--product-other-than-itself"></a><a name="1.5"></a>
 - **[1.5](#array--product-other-than-itself) Given an array of integers, return an output array such that output[i] is equal to the product of all the elements in the array other than itself. (Solve this in O(n) without division)**
   ```javascript
-
   var firstArray = [2, 2, 4, 1];
   var secondArray = [0, 0, 0, 2];
   var thirdArray = [-2, -2, -3, 2];
@@ -177,20 +170,17 @@
 
     return output;
   }
-
   ```
 
 <a name="array--intersection"></a><a name="1.6"></a>
 - **[1.6](#array--intersection) Find the intersection of two arrays. An intersection would be the common elements that exists within both arrays. In this case, these elements should be unique!**
   ```javascript
-
   var firstArray = [2, 2, 4, 1];
   var secondArray = [1, 2, 0, 2];
 
   intersection(firstArray, secondArray); // [2, 1]
 
   function intersection(firstArray, secondArray) {
-
     // The logic here is to create a hashmap with the elements of the firstArray as the keys.
     // After that, you can use the hashmap's O(1) look up time to check if the element exists in the hash
     // If it does exist, add that element to the new array.
@@ -202,19 +192,18 @@
       hashmap[element] = 1;
     });
 
-    // Since we only want to push unique elements in our case... we can implement a counter to keep track of what we
-    // already added
+    // Since we only want to push unique elements in our case... we can implement a counter to keep track of what we already added
     secondArray.forEach(function(element) {
-      if (hashmap[element] == 1) {
+      if (hashmap[element] === 1) {
         intersectionArray.push(element);
         hashmap[element]++;
       }
     });
+
     return intersectionArray;
 
     // Time complexity O(n), Space complexity O(n)
   }
-
   ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -224,7 +213,6 @@
 - **[2.1](#string--reverse) Given a string, reverse each word in the sentence**
   `"Welcome to this Javascript Guide!"` should be become `"emocleW ot siht tpircsavaJ !ediuG"`
   ```javascript
-
   var string = "Welcome to this Javascript Guide!";
 
   // Output becomes !ediuG tpircsavaJ siht ot emocleW
@@ -240,15 +228,13 @@
 <a name="string--anagram"></a><a name="2.2"></a>
 - **[2.2](#string--anagram) Given two strings, return true if they are anagrams of one another**
   `"Mary" is an anagram of "Army"`
-  ``` javascript
-
+  ```javascript
   var first_word = "Mary";
   var second_word = "Army";
 
-  isAnagram(first_word, second_word); //true
+  isAnagram(first_word, second_word); // true
 
   function isAnagram (first, second) {
-
     // For case insensitivity, change both words to lowercase.
     var a = first.toLowerCase();
     var b = second.toLowerCase();
@@ -257,14 +243,13 @@
     a = a.split("").sort().join("");
     b = b.split("").sort().join("");
 
-    return (a === b);
+    return a === b;
   }
   ```
 <a name="string--palindrome"></a><a name="2.3"></a>
 - **[2.3](#string--palindrome) Check if a given string is a palindrome**
   `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
   ```javascript
-
   isPalindrome("racecar"); // true
   isPalindrome("race Car"); // true
 
@@ -273,7 +258,7 @@
     var letters_only = word.toLowerCase().replace(/\s/g, "");
 
     // Compare the string with the reversed version of the string
-    return (letters_only === letters_only.split("").reverse().join(""));
+    return letters_only === letters_only.split("").reverse().join("");
   }
   ```
 **[⬆ back to top](#table-of-contents)**
@@ -283,9 +268,8 @@
 <a name="stack-queue--stack-as-queue"></a><a name="3.1"></a>
 - **[3.1](#stack-queue--stack-as-queue) Implement enqueue and dequeue using only two stacks**
   ```javascript
-
-  var input_stack = []; // first stack
-  var output_stack = []; // second stack
+  var input_stack = []; // First stack
+  var output_stack = []; // Second stack
 
   // For enqueue, just push the item into the first stack
   function enqueue(stack_input, item) {
@@ -302,6 +286,7 @@
         stack_output.push(element_to_output);
       }
     }
+
     return stack_output.pop();
   }
   ```
@@ -310,12 +295,11 @@
   In this example, we will only consider "{}" as valid parentheses
   `{}{}` would be considered balancing. `{{{}}` is not balanced
   ```javascript
-
   var expression = "{{}}{}{}"
   var expression_false = "{}{{}";
 
   isBalanced(expression); // true
-  isBalanced(expression_false); //false
+  isBalanced(expression_false); // false
   isBalanced(""); // true
 
   function isBalanced(expression) {
@@ -329,7 +313,7 @@
       if(check_string[i] === '{') {
         stack.push(check_string[i]);
       } else if (check_string[i] === '}') {
-        // pop on an empty array is undefined
+        // Pop on an empty array is undefined
         if (stack.length > 0) {
           stack.pop();
         } else {
@@ -350,25 +334,23 @@
 - **[4.1](#recursion--decimal-to-binary) Write a recursive function that returns the binary string of a given decimal number**
   Given `4` as the decimal input, the function should return `100`
 
-  ``` javascript
-
+  ```javascript
   decimalToBinary(3); // 11
-  decimalToBinary(8); //1000
-  decimalToBinary(1000); //1111101000
+  decimalToBinary(8); // 1000
+  decimalToBinary(1000); // 1111101000
 
   function decimalToBinary(digit) {
     if(digit >= 1) {
-
-      // if digit is not divisible by 2 then recursively return proceeding
+      // If digit is not divisible by 2 then recursively return proceeding
       // binary of the digit minus 1, 1 is added for the leftover 1 digit
       if (digit % 2) {
         return decimalToBinary((digit - 1) / 2) + 1;
       } else {
-        // recursively return proceeding binary digits
+        // Recursively return proceeding binary digits
         return decimalToBinary(digit / 2) + 0;
       }
     } else {
-      // exit condition
+      // Exit condition
       return '';
     }
   }
@@ -377,10 +359,8 @@
 <a name="recursion--binary-search"></a><a name="4.2"></a>
 - **[4.2](#recursion--binary-search) Write a recursive function that performs a binary search**
 
-  ``` javascript
-
+  ```javascript
   function recursiveBinarySearch(array, value, leftposition, rightposition) {
-
     // Value DNE
     if (leftposition > rightposition) return -1;
 
@@ -393,7 +373,6 @@
       return recursiveBinarySearch(array, value, middle_pivot + 1, rightposition);
     }
   }
-
   ```
 **[⬆ back to top](#table-of-contents)**
 
@@ -401,8 +380,7 @@
 <a name="numbers--power-of-two"></a><a name="5.1"></a>
 - **[5.1](#numbers--power-of-two) Given an integer, determine if it is a power of 2. If so,
   return that number, else return -1. (0 is not a power of two)**
-  ``` javascript
-
+  ```javascript
   isPowerOfTwo(4); // true
   isPowerOfTwo(64); // true
   isPowerOfTwo(1); // true
@@ -419,15 +397,14 @@
     // and thus, 4 satisfies are expression.
     // In turn, if the expression is `return (5 & 4 === 0)`, it would be false
     // since it returns 101 & 100 = 100 (NOT === 0)
-    return (number & (number - 1) === 0);
+
+    return number & (number - 1) === 0;
   }
 
   // For zero-case:
   function isPowerOfTwoZeroCase(number) {
-    return (number != 0) && ((number & (number - 1)) === 0);
+    return (number !== 0) && ((number & (number - 1)) === 0);
   }
-
-
   ```
 **[⬆ back to top](#table-of-contents)**
 
@@ -438,7 +415,6 @@
   Hoisting is the concept in which Javascript, by default, moves all declarations to the top
   of the current scope. As such, a variable can be used before it has been declared. Note that
   Javascript only hoists declarations and not initializations
-
   ```
 
 <a name="javascript--use-strict"></a><a name="6.2"></a>
@@ -449,13 +425,13 @@
   undeclared variables. Older versions of javascript would ignore this directive declaration
   ```
 
-  ``` javascript
-  // example of strict mode
+  ```javascript
+  // Example of strict mode
   "use strict";
 
   catchThemAll();
   function catchThemAll() {
-    x = 3.14; // error will be thrown
+    x = 3.14; // Error will be thrown
     return x * x;
   }
   ```
@@ -478,7 +454,7 @@
   ```
 
   ```javascript
-  // example of comparators
+  // Example of comparators
   0 == false; // true
   0 === false; // false
 
@@ -489,7 +465,6 @@
 <a name="javascript--null-undefined"></a><a name="6.5"></a>
 - **[6.5](#javascript--null-undefined) What is the difference between `null` and `undefined`**
   ```
-
   In Javascript, null is an assignment value, and can be assigned to a variable representing that
   it has no value. Undefined, on the other hand, represents that a variable has been declared but
   there is no value associated with it
@@ -498,7 +473,6 @@
 <a name="javascript--difference-inheritance"></a><a name="6.6"></a>
 - **[6.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**
   ```
-
   In classical inheritance, classes are immutable, may or may not support multiple
   inheritance, and may contain interfaces, final classes, and abstract classes. In contrast,
   prototypes are much more flexible in the sense that they may be mutable or immutable. The object
