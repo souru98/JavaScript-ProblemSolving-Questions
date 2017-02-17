@@ -14,9 +14,9 @@
 <a name="array--product"></a><a name="1.1"></a>
 - **[1.1](#array--product) Given an array of integers, find the largest product yielded from three of the integers**
   ```javascript
-  var unsorted_array = [-10, 7, 29, 30, 5, -10, -70];
+  var unsortedArray = [-10, 7, 29, 30, 5, -10, -70];
 
-  computeProduct(unsorted_array); // 21000
+  computeProduct(unsortedArray); // 21000
 
   function sortIntegers(a, b) {
     return a - b;
@@ -24,17 +24,17 @@
 
   // Greatest product is either (min1 * min2 * max1 || max1 * max2 * max3)
   function computeProduct(unsorted) {
-    var sorted_array = unsorted.sort(sortIntegers),
+    var sortedArray = unsorted.sort(sortIntegers),
       product1 = 1,
       product2 = 1,
       array_n_element = sorted_array.length - 1;
 
     // Get the product of three largest integers in sorted array
     for (var x = array_n_element; x > array_n_element - 3; x--) {
-        product1 = product1 * sorted_array[x];
+        product1 = product1 * sortedArray[x];
     }
 
-    product2 = sorted_array[0] * sorted_array[1] * sorted_array[array_n_element];
+    product2 = sortedArray[0] * sortedArray[1] * sortedArray[array_n_element];
 
     if (product1 > product2) return product1;
 
@@ -45,29 +45,29 @@
 - **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**
   ```javascript
   // The output of the function should be 8
-  var array_of_integers = [2, 5, 1, 4, 9, 6, 3, 7];
-  var upper_bound = 9;
-  var lower_bound = 1;
+  var arrayOfIntegers = [2, 5, 1, 4, 9, 6, 3, 7];
+  var upperBound = 9;
+  var lowerBound = 1;
 
-  findMissingNumber(array_of_integers, upper_bound, lower_bound); // 8
+  findMissingNumber(arrayOfIntegers, upperBound, lowerBound); // 8
 
-  function findMissingNumber(array_of_integers, upper_bound, lower_bound) {
+  function findMissingNumber(arrayOfIntegers, upperBound, lowerBound) {
     // Iterate through array to find the sum of the numbers
-    var sum_of_integers = 0;
-    for (var i = 0; i < array_of_integers.length; i++) {
-      sum_of_integers += array_of_integers[i];
+    var sumOfIntegers = 0;
+    for (var i = 0; i < arrayOfIntegers.length; i++) {
+      sum_of_integers += arrayOfIntegers[i];
     }
 
     // Find theoretical sum of the consecutive numbers using a variation of Gauss Sum.
     // Formula: [(N * (N + 1)) / 2] - [(M * (M - 1)) / 2];
     // N is the upper bound and M is the lower bound
 
-    upper_limit_sum = (upper_bound * (upper_bound + 1)) / 2;
-    lower_limit_sum = (lower_bound * (lower_bound - 1)) / 2;
+    upperLimitSum = (upperBound * (upperBound + 1)) / 2;
+    lowerLimitSum = (lowerBound * (lowerBound - 1)) / 2;
 
-    theoretical_sum = upper_limit_sum - lower_limit_sum;
+    theoreticalSum = upperLimitSum - lowerLimitSum;
 
-    return theoretical_sum - sum_of_integers;
+    return theoreticalSum - sumOfIntegers;
   }
   ```
 <a name="array--unique"></a><a name="1.3"></a>
@@ -111,9 +111,9 @@
     // If there is only one element, there is no difference
     if (array.length <= 1) return -1;
 
-    // current_min will keep track of the current lowest
-    var current_min = array[0];
-    var current_max_difference = 0;
+    // currentMin will keep track of the current lowest
+    var currentMin = array[0];
+    var currentMaxDifference = 0;
 
     // We will iterate through the array and keep track of the current max difference
     // If we find a greater max difference, we will set the current max difference to that variable
@@ -121,17 +121,17 @@
     // difference is yield from `largest value in future` - `smallest value before it`
 
     for (var i = 1; i < array.length; i++) {
-      if (array[i] > current_min && (array[i] - current_min > current_max_difference)) {
-        current_max_difference = array[i] - current_min;
-      } else if (array[i] <= current_min) {
-        current_min = array[i];
+      if (array[i] > currentMin && (array[i] - currentMin > currentMaxDifference)) {
+        currentMaxDifference = array[i] - currentMin;
+      } else if (array[i] <= currentMin) {
+        currentMin = array[i];
       }
     }
 
     // If negative or 0, there is no largest difference
-    if (current_max_difference <= 0) return -1;
+    if (currentMaxDifference <= 0) return -1;
 
-    return current_max_difference;
+    return currentMaxDifference;
   }
 
   ```
@@ -216,10 +216,10 @@
   var string = "Welcome to this Javascript Guide!";
 
   // Output becomes !ediuG tpircsavaJ siht ot emocleW
-  var reverse_entire_sentence = reverseBySeparator(string, "");
+  var reverseEntireSentence = reverseBySeparator(string, "");
 
   // Output becomes emocleW ot siht tpircsavaJ !ediuG
-  var reverse_each_word = reverseBySeparator(reverse_entire_sentence, " ");
+  var reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
 
   function reverseBySeparator(string, separator) {
     return string.split(separator).reverse().join(separator);
@@ -229,10 +229,10 @@
 - **[2.2](#string--anagram) Given two strings, return true if they are anagrams of one another**
   `"Mary" is an anagram of "Army"`
   ```javascript
-  var first_word = "Mary";
-  var second_word = "Army";
+  var firstWord = "Mary";
+  var secondWord = "Army";
 
-  isAnagram(first_word, second_word); // true
+  isAnagram(firstWord, secondWord); // true
 
   function isAnagram (first, second) {
     // For case insensitivity, change both words to lowercase.
@@ -255,10 +255,10 @@
 
   function isPalindrome(word) {
     // Replace all non-letter chars with "" and change to lowercase
-    var letters_only = word.toLowerCase().replace(/\s/g, "");
+    var lettersOnly = word.toLowerCase().replace(/\s/g, "");
 
     // Compare the string with the reversed version of the string
-    return letters_only === letters_only.split("").reverse().join("");
+    return lettersOnly === lettersOnly.split("").reverse().join("");
   }
   ```
 **[⬆ back to top](#table-of-contents)**
@@ -268,26 +268,26 @@
 <a name="stack-queue--stack-as-queue"></a><a name="3.1"></a>
 - **[3.1](#stack-queue--stack-as-queue) Implement enqueue and dequeue using only two stacks**
   ```javascript
-  var input_stack = []; // First stack
-  var output_stack = []; // Second stack
+  var inputStack = []; // First stack
+  var outputStack = []; // Second stack
 
   // For enqueue, just push the item into the first stack
-  function enqueue(stack_input, item) {
-    return stack_input.push(item);
+  function enqueue(stackInput, item) {
+    return stackInput.push(item);
   }
 
-  function dequeue(stack_input, stack_output) {
+  function dequeue(stackInput, stackOutput) {
     // Reverse the stack such that the first element of the output stack is the
     // last element of the input stack. After that, pop the top of the output to
     // get the first element that was ever pushed into the input stack
-    if (stack_output.length <= 0) {
-      while(stack_input.length > 0) {
-        var element_to_output = stack_input.pop();
-        stack_output.push(element_to_output);
+    if (stackOutput.length <= 0) {
+      while(stackInput.length > 0) {
+        var element_to_output = stackInput.pop();
+        stackOutput.push(element_to_output);
       }
     }
 
-    return stack_output.pop();
+    return stackOutput.pop();
   }
   ```
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
