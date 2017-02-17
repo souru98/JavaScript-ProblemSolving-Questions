@@ -301,8 +301,8 @@
         var element_to_output = stack_input.pop();
         stack_output.push(element_to_output);
       }
-      return stack_output.pop();
     }
+    return stack_output.pop();
   }
   ```
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
