@@ -37,8 +37,8 @@
 
     if (product1 > product2) return product1;
 
-    return product2
-  };
+    return product2;
+  }
   ```
 <a name="array--consecutive--sum"></a><a name="1.2"></a>
 - **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**
@@ -69,7 +69,7 @@
     theoretical_sum = upper_limit_sum - lower_limit_sum;
 
     //
-    return (theoretical_sum - sum_of_integers)
+    return (theoretical_sum - sum_of_integers);
   }
   ```
 <a name="array--unique"></a><a name="1.3"></a>
@@ -187,7 +187,7 @@
   var firstArray = [2, 2, 4, 1];
   var secondArray = [1, 2, 0, 2];
 
-  intersection(firstArray, secondArray) // [2, 1]
+  intersection(firstArray, secondArray); // [2, 1]
 
   function intersection(firstArray, secondArray) {
 
@@ -323,7 +323,7 @@
     var stack = [];
 
     // If empty, parentheses are technically balanced
-    if (check_string.length <= 0) return true
+    if (check_string.length <= 0) return true;
 
     for (var i = 0; i < check_string.length; i++) {
       if(check_string[i] === '{') {
@@ -352,9 +352,9 @@
 
   ``` javascript
 
-  decimalToBinary(3) // 11
-  decimalToBinary(8) //1000
-  decimalToBinary(1000) //1111101000
+  decimalToBinary(3); // 11
+  decimalToBinary(8); //1000
+  decimalToBinary(1000); //1111101000
 
   function decimalToBinary(digit) {
     if(digit >= 1) {
@@ -419,13 +419,13 @@
     // and thus, 4 satisfies are expression.
     // In turn, if the expression is `return (5 & 4 === 0)`, it would be false
     // since it returns 101 & 100 = 100 (NOT === 0)
-    return (number & (number - 1) === 0)
-  };
+    return (number & (number - 1) === 0);
+  }
 
   // For zero-case:
   function isPowerOfTwoZeroCase(number) {
     return (number != 0) && ((number & (number - 1)) === 0);
-  };
+  }
 
 
   ```
@@ -482,8 +482,8 @@
   0 == false; // true
   0 === false; // false
 
-  2 == '2' // true
-  2 === '2' // false
+  2 == '2'; // true
+  2 === '2'; // false
   ```
 
 <a name="javascript--null-undefined"></a><a name="6.5"></a>
