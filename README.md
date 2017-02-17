@@ -55,7 +55,7 @@
     // Iterate through array to find the sum of the numbers
     var sumOfIntegers = 0;
     for (var i = 0; i < arrayOfIntegers.length; i++) {
-      sum_of_integers += arrayOfIntegers[i];
+      sumOfIntegers += arrayOfIntegers[i];
     }
 
     // Find theoretical sum of the consecutive numbers using a variation of Gauss Sum.
@@ -234,7 +234,7 @@
 
   isAnagram(firstWord, secondWord); // true
 
-  function isAnagram (first, second) {
+  function isAnagram(first, second) {
     // For case insensitivity, change both words to lowercase.
     var a = first.toLowerCase();
     var b = second.toLowerCase();
@@ -282,8 +282,8 @@
     // get the first element that was ever pushed into the input stack
     if (stackOutput.length <= 0) {
       while(stackInput.length > 0) {
-        var element_to_output = stackInput.pop();
-        stackOutput.push(element_to_output);
+        var elementToOutput = stackInput.pop();
+        stackOutput.push(elementToOutput);
       }
     }
 
@@ -296,23 +296,23 @@
   `{}{}` would be considered balancing. `{{{}}` is not balanced
   ```javascript
   var expression = "{{}}{}{}"
-  var expression_false = "{}{{}";
+  var expressionFalse = "{}{{}";
 
   isBalanced(expression); // true
-  isBalanced(expression_false); // false
+  isBalanced(expressionFalse); // false
   isBalanced(""); // true
 
   function isBalanced(expression) {
-    var check_string = expression;
+    var checkString = expression;
     var stack = [];
 
     // If empty, parentheses are technically balanced
-    if (check_string.length <= 0) return true;
+    if (checkString.length <= 0) return true;
 
-    for (var i = 0; i < check_string.length; i++) {
-      if(check_string[i] === '{') {
-        stack.push(check_string[i]);
-      } else if (check_string[i] === '}') {
+    for (var i = 0; i < checkString.length; i++) {
+      if(checkString[i] === '{') {
+        stack.push(checkString[i]);
+      } else if (checkString[i] === '}') {
         // Pop on an empty array is undefined
         if (stack.length > 0) {
           stack.pop();
@@ -360,17 +360,17 @@
 - **[4.2](#recursion--binary-search) Write a recursive function that performs a binary search**
 
   ```javascript
-  function recursiveBinarySearch(array, value, leftposition, rightposition) {
+  function recursiveBinarySearch(array, value, leftPosition, rightPosition) {
     // Value DNE
-    if (leftposition > rightposition) return -1;
+    if (leftPosition > rightPosition) return -1;
 
-    var middle_pivot = Math.floor((leftposition + rightposition) / 2);
-    if (array[middle_pivot] === value) {
-      return middle_pivot;
-    } else if (array[middle_pivot] > value) {
-      return recursiveBinarySearch(array, value, leftposition, middle_pivot - 1);
+    var middlePivot = Math.floor((leftPosition + rightPosition) / 2);
+    if (array[middlePivot] === value) {
+      return middlePivot;
+    } else if (array[middlePivot] > value) {
+      return recursiveBinarySearch(array, value, leftPosition, middlePivot - 1);
     } else {
-      return recursiveBinarySearch(array, value, middle_pivot + 1, rightposition);
+      return recursiveBinarySearch(array, value, middlePivot + 1, rightPosition);
     }
   }
   ```
