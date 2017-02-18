@@ -27,7 +27,7 @@
     var sortedArray = unsorted.sort(sortIntegers),
       product1 = 1,
       product2 = 1,
-      array_n_element = sorted_array.length - 1;
+      array_n_element = sortedArray.length - 1;
 
     // Get the product of three largest integers in sorted array
     for (var x = array_n_element; x > array_n_element - 3; x--) {
@@ -41,6 +41,9 @@
     return product2;
   }
   ```
+
+  View on Codepen: https://codepen.io/kennymkchan/pen/LxoMvm?editors=0012
+
 <a name="array--consecutive--sum"></a><a name="1.2"></a>
 - **[1.2](#array--consecutive--sum) Being told that an unsorted array contains (n - 1) of n consecutive numbers (where the bounds are defined), find the missing number in `O(n)` time**
   ```javascript
