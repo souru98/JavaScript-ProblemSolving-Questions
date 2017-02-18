@@ -435,6 +435,7 @@
 ## Javascript
 <a name="javascript--hoisting"></a><a name="6.1"></a>
 - **[6.1](#javascript--hosting) Explain what is hoisting in Javascript**
+
   ```
   Hoisting is the concept in which Javascript, by default, moves all declarations to the top
   of the current scope. As such, a variable can be used before it has been declared. Note that
@@ -487,6 +488,7 @@
 
 <a name="javascript--null-undefined"></a><a name="6.5"></a>
 - **[6.5](#javascript--null-undefined) What is the difference between `null` and `undefined`**
+
   ```
   In Javascript, null is an assignment value, and can be assigned to a variable representing that
   it has no value. Undefined, on the other hand, represents that a variable has been declared but
@@ -495,6 +497,7 @@
 
 <a name="javascript--difference-inheritance"></a><a name="6.6"></a>
 - **[6.6](#javascript--difference-inheritance) How does `prototypal inheritance` differ from `classical inheritance`**
+
   ```
   In classical inheritance, classes are immutable, may or may not support multiple
   inheritance, and may contain interfaces, final classes, and abstract classes. In contrast,
