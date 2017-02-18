@@ -89,7 +89,7 @@
 
     for(var i = 0; i < array.length; i++) {
       // If key returns undefined (unique), it is evaluated as false.
-      if(!hashmap.hasOwnProperty([array[i]])) {
+      if(!hashmap.hasOwnProperty(array[i])) {
         hashmap[array[i]] = 1;
         unique.push(array[i]);
       }
