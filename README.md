@@ -234,6 +234,8 @@
     return string.split(separator).reverse().join(separator);
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/VPOONZ?editors=0012
+
 <a name="string--anagram"></a><a name="2.2"></a>
 - **[2.2](#string--anagram) Given two strings, return true if they are anagrams of one another**
   `"Mary" is an anagram of "Army"`
@@ -255,6 +257,8 @@
     return a === b;
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/NdVVVj?editors=0012
+
 <a name="string--palindrome"></a><a name="2.3"></a>
 - **[2.3](#string--palindrome) Check if a given string is a palindrome**
   `"racecar" is a palindrome. "race car" should also be considered a palindrome. Case sensitivity should be taken into account`
@@ -270,6 +274,8 @@
     return lettersOnly === lettersOnly.split("").reverse().join("");
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/xgNNNB?editors=0012
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Stacks and Queues
@@ -299,6 +305,8 @@
     return stackOutput.pop();
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/mRYYZV?editors=0012
+
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
 - **[3.2](#stack-queue--parentheses-balancing) Create a function that will evaluate if a given expression has balanced parentheses -- Using stacks**
   In this example, we will only consider "{}" as valid parentheses
@@ -336,6 +344,8 @@
     return true;
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/egaawj?editors=0012
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Recursion
@@ -364,6 +374,7 @@
     }
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/OWYYKb?editors=0012
 
 <a name="recursion--binary-search"></a><a name="4.2"></a>
 - **[4.2](#recursion--binary-search) Write a recursive function that performs a binary search**
@@ -383,6 +394,8 @@
     }
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/ygWWmK?editors=0012
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Numbers
@@ -415,6 +428,8 @@
     return (number !== 0) && ((number & (number - 1)) === 0);
   }
   ```
+  **View on Codepen:** http://codepen.io/kennymkchan/pen/qRGGeG?editors=0012
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Javascript
@@ -454,7 +469,6 @@
   One way to prevent event bubbling is using `event.stopPropagation()` or `event.cancelBubble`
   on IE < 9
   ```
-
 <a name="javascript--strict-operators"></a><a name="6.4"></a>
 - **[6.4](#javascript--strict-operators) What is the difference between `==` and `===` in JS?**
   ```
