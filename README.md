@@ -307,7 +307,12 @@
       // If the letter does not exist, create a map and map it to the value
       // of the second letter
       if (letterMap[letterA] === undefined) {
-        letterMap[letterA] = letterB;
+        // If letterB has already been added to letterMap, then we can say: they are not isomorphic.
+        if(secondString.indexOf(letterB) < i){
+            return false;
+        } else {
+            letterMap[letterA] = letterB;            
+        }
       } else if (letterMap[letterA] !== letterB) {
         // Eles if letterA already exists in the map, but it does not map to
         // letterB, that means that A is mapping to more than one letter.
