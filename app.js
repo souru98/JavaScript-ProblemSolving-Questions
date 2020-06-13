@@ -19,6 +19,23 @@ var unsortedArray = [-10, 7, 29, 30, 5, -10, -70];
 
 //   //Write your program here
 
+function solution(A) {
+    A = A.sort((a, b) => b - a);
+    var product = A[0] * A[1] * A[2];
+    var length = A.length;
+    if (A[0] < 0) {
+        console.log(product);
+    }
+    if (A[length - 1] * A[length - 2] * A[0] > product) {
+        console.log(A[length - 1] * A[length - 2] * A[0]);
+    }
+    if (A[2] < 0 && length >= 5 && A[3] * A[4] < A[0] * A[1]) {
+        console.log(A[2] * A[3] * A[4]);
+    }
+}
+
+solution(unsortedArray);
+
 
 //--------------------------------------------------------------------------------------------------------------------------
 
@@ -33,6 +50,22 @@ var lowerBound = 1;
 
 //   //Write your program here
 
+function missingInUnsorted(arr, lb, ub) {
+    // Iterate through array to find the sum of the numbers
+    let sumOfIntegers = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sumOfIntegers += arr[i];
+    }
+
+    upperLimitSum = ub * (ub + 1) / 2;
+    lowerLimitSum = lb * (lb - 1) / 2;
+
+    theoreticalSum = upperLimitSum - lowerLimitSum;
+
+    console.log(theoreticalSum - sumOfIntegers);
+}
+missingInUnsorted(arrayOfIntegers, lowerBound, upperBound);
+
 
 //--------------------------------------------------------------------------------------------------------------------------
 
@@ -45,8 +78,10 @@ var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 
 //    //Write your program here
 
-
-
+function uniqeArray(a) {
+    console.log(Array.from(new Set(a)));
+}
+uniqeArray(array);
 //--------------------------------------------------------------------------------------------------------------------------
 
 
@@ -59,6 +94,16 @@ var arrays = [7, 8, 4, 9, 9, 15, 3, 1, 10];
 
 //   //Write your program here
 
+var maxsize = arrays[arrays.length - 1];
+var difference = 0;
+for (var i = arrays.length - 1; i >= 0; i--) {
+    if (arrays[i] > maxsize)
+        maxsize = arrays[i];
+    else {
+        difference = Math.max(difference, maxsize - arrays[i]);
+    }
+}
+console.log(difference);
 
 //--------------------------------------------------------------------------------------------------------------------------
 
@@ -73,7 +118,6 @@ var tArray = [-2, -2, -3, 2];
 //   //Write your program here
 
 
-
 //--------------------------------------------------------------------------------------------------------------------------
 
 
@@ -86,7 +130,10 @@ var secondArray = [1, 2, 0, 2];
 
 //Write your program here
 
-
+function intersect(a, b) {
+    console.log(a.filter(Set.prototype.has, new Set(b)));
+}
+intersect(firstArray, secondArray);
 
 
 //--------------------------------------------------------------------------------------------------------------------------
