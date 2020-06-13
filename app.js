@@ -301,7 +301,27 @@ var expressionFalse = "{}{{}";
 
 //   //Write your program here
 
+////SOLUTION-1
+function decimalToBinary(number) {
+    var converted = [];
+    if (number > 1)
+        decimalToBinary(number >> 1);
+    converted.push(number & 1);
+    console.log(converted.join(""));
+}
+decimalToBinary(1000);
 
+
+//SOLUTION-2
+function decimalToBinary(number) {
+    var converted = [],
+        i;
+    for (i = number; i > 0; i = parseInt(i / 2)) {
+        converted.push(i % 2);
+    }
+    console.log(converted.reverse().join(""));
+}
+decimalToBinary(8);
 
 //--------------------------------------------------------------------------------------------------------------------------
 
@@ -335,7 +355,7 @@ function recursiveBinarySearch(array, value, leftPosition, rightPosition) {
 
 //Write your program here:
 
-function power_of_2(n) {
+function isPowerOfTwo(n) {
     if (typeof n !== 'number')
         console.log('Not a number');
     else if (n === 0) {
@@ -344,6 +364,6 @@ function power_of_2(n) {
         console.log(n && (n & (n - 1)) === 0);
     }
 }
-power_of_2(64);
+isPowerOfTwo(64);
 
 // **[⬆ back to top](#table-of-contents)**
