@@ -1,5 +1,5 @@
 # Interview Algorithm Questions in Javascript() {...}
-*A mostly reasonable collection of technical software development interview questions solved in Javascript in ES5 and ES6*
+*A mostly reasonable collection of technical software development interview questions try to solve using Javascript*
 
 ## Table of Contents
 1. [Array](#array)
@@ -7,7 +7,6 @@
 1. [Stacks and Queues](#stacks-and-queues)
 1. [Recursion](#recursion)
 1. [Numbers](#numbers)
-1. To Be Continued
 
 ## Array
 <a name="array--product"></a><a name="1.1"></a>
@@ -17,6 +16,7 @@
 
   computeProduct(unsortedArray); // 21000
 
+  //Write your program here
   
   ```
  
@@ -28,6 +28,7 @@
   var upperBound = 9;
   var lowerBound = 1;
 
+  //Write your program here
   
   ```
 
@@ -37,21 +38,19 @@
   // ES6 Implementation
   var array = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
 
- 
+   //Write your program here
 
-  }
+  
   ```
 
 <a name="array--largest-difference"></a><a name="1.4"></a>
 - **[1.4](#array--largest-difference) Given an array of integers, find the largest difference between two elements such that the element of lesser value must come before the greater element**
   ```javascript
   var array = [7, 8, 4, 9, 9, 15, 3, 1, 10];
-  // [7, 8, 4, 9, 9, 15, 3, 1, 10] would return `11` based on the difference between `4` and `15`
-  // Notice: It is not `14` from the difference between `15` and `1` because 15 comes before 1.
 
   findLargestDifference(array);
 
- 
+ //Write your program here
 
   ```
   
@@ -62,7 +61,7 @@
   var secondArray = [0, 0, 0, 2];
   var thirdArray = [-2, -2, -3, 2];
 
- 
+  //Write your program here
   
   ```
  
@@ -73,8 +72,8 @@
   var secondArray = [1, 2, 0, 2];
 
  
-    // Time complexity O(n), Space complexity O(n)
-  }
+  //Write your program here
+
   ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -86,7 +85,7 @@
   ```javascript
   var string = "Welcome to this Javascript Guide!";
 
- 
+  //Write your program here
   ```
 
 <a name="string--anagram"></a><a name="2.2"></a>
@@ -96,7 +95,7 @@
   var firstWord = "Mary";
   var secondWord = "Army";
 
-  
+    //Write your program here
   ```
 <a name="string--palindrome"></a><a name="2.3"></a>
 - **[2.3](#string--palindrome) Check if a given string is a palindrome**
@@ -105,7 +104,7 @@
   isPalindrome("racecar"); // true
   isPalindrome("race Car"); // true
 
-
+  //Write your program here
   ```
 
 <a name="string--isIsomorphic"></a><a name="2.3"></a>
@@ -125,6 +124,7 @@
   isIsomorphic("paper", 'title'); // true
   isIsomorphic("kick", 'side'); // false
 
+  //Write your program here
   ```
   
 **[⬆ back to top](#table-of-contents)**
@@ -137,7 +137,7 @@
   var inputStack = []; // First stack
   var outputStack = []; // Second stack
 
-
+  //Write your program here
   ```
 
 <a name="stack-queue--parentheses-balancing"></a><a name="3.2"></a>
@@ -152,7 +152,7 @@
   isBalanced(expressionFalse); // false
   isBalanced(""); // true
 
- 
+  //Write your program here
   ```
  
 **[⬆ back to top](#table-of-contents)**
@@ -167,7 +167,7 @@
   decimalToBinary(8); // 1000
   decimalToBinary(1000); // 1111101000
 
-  
+  //Write your program here
   ```
  
 <a name="recursion--binary-search"></a><a name="4.2"></a>
@@ -192,7 +192,7 @@
   isPowerOfTwo(0); // false
   isPowerOfTwo(-1); // false
 
-  // For the non-zero case:
+  //Write your program here:
  
   ```
  
