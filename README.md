@@ -108,23 +108,23 @@
   ```
 
 <a name="string--isIsomorphic"></a><a name="2.3"></a>
-- **[2.3](#string--palindrome) Check if a given string is a isomorphic**
+- **[2.4](#string--palindrome) Check if a given string is a isomorphic**
 
   ```
-  For two strings to be isomorphic, all occurrences of a character in string A can be replaced with another character
-  to get string B. The order of the characters must be preserved. There must be one-to-one mapping for ever char of
-  string A to every char of string B.
+    For two strings to be isomorphic, all occurrences of a character in string A can be replaced with another character
+    to get string B. The order of the characters must be preserved. There must be one-to-one mapping for ever char of
+    string A to every char of string B.
 
-  `paper` and `title` would return true.
-  `egg` and `sad` would return false.
-  `dgg` and `add` would return true.
-  ```
-  ```javascript
-  isIsomorphic("egg", 'add'); // true
-  isIsomorphic("paper", 'title'); // true
-  isIsomorphic("kick", 'side'); // false
+    `paper` and `title` would return true.
+    `egg` and `sad` would return false.
+    `dgg` and `add` would return true.
+    ```
+    ```javascript
+    isIsomorphic("egg", 'add'); // true
+    isIsomorphic("paper", 'title'); // true
+    isIsomorphic("kick", 'side'); // false
 
-  //Write your program here
+    //Write your program here
   ```
   
 **[⬆ back to top](#table-of-contents)**
