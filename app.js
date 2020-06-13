@@ -335,6 +335,15 @@ function recursiveBinarySearch(array, value, leftPosition, rightPosition) {
 
 //Write your program here:
 
-
+function power_of_2(n) {
+    if (typeof n !== 'number')
+        console.log('Not a number');
+    else if (n === 0) {
+        console.log(false);
+    } else {
+        console.log(n && (n & (n - 1)) === 0);
+    }
+}
+power_of_2(64);
 
 // **[⬆ back to top](#table-of-contents)**
