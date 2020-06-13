@@ -118,8 +118,8 @@
     `paper` and `title` would return true.
     `egg` and `sad` would return false.
     `dgg` and `add` would return true.
-    ```
-    ```javascript
+
+    javascript
     isIsomorphic("egg", 'add'); // true
     isIsomorphic("paper", 'title'); // true
     isIsomorphic("kick", 'side'); // false
